@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:400,600|Sacramento|Source+Sans+Pro:300&subset=latin-ext');
-
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700|Poppins:400,700&display=swap&subset=latin-ext');
 /* Variables */
 
 $color-light: #fff;
 $color-dark: #444;
+$color-l-pink: #ffcccc;
+$color-article: #ff3838;
 
+$font-links: 'Merriweather', serif;
 $font-logo: 'Sacramento', cursive;
 $font-header: 'Oswald', sans-serif;
 $font-text: 'Source Sans Pro', sans-serif;
+$font-article: 'Poppins', sans-serif;
 
 /* Global */
 
@@ -16,7 +20,7 @@ $font-text: 'Source Sans Pro', sans-serif;
 }
 
 body {
-  background: $color-light;
+  background: $color-l-pink;
   font-family: $font-text;
   color: $color-dark;
   font-weight: 300;
@@ -38,6 +42,35 @@ body {
     text-transform: none;
     font-weight: 400;
     color: lighten($color-dark, 20%);
+  }
+}
+
+/* Article links*/
+
+.titles {
+  li {
+    font-size: 20px;
+    padding: 2px 0;
+    a {
+      text-decoration: none;
+      color: #0c2461;
+      font-family: $font-article;
+      &:hover {
+        color: $color-article;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+/*Article*/
+
+.post {
+  .post-title {
+    font-family: $font-article;
+    color: $color-article;
+    text-transform: uppercase;
+    font-size: 24px;
   }
 }
 

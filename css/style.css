@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald:400,600|Sacramento|Source+Sans+Pro:300&subset=latin-ext");
+@import url("https://fonts.googleapis.com/css?family=Merriweather:400,700|Poppins:400,700&display=swap&subset=latin-ext");
 /* Variables */
 /* Global */
 *, *::before, *::after {
@@ -6,7 +7,7 @@
 }
 
 body {
-  background: #fff;
+  background: #ffcccc;
   font-family: "Source Sans Pro", sans-serif;
   color: #444;
   font-weight: 300;
@@ -30,6 +31,31 @@ body {
   text-transform: none;
   font-weight: 400;
   color: #777777;
+}
+
+/* Article links*/
+.titles li {
+  font-size: 20px;
+  padding: 2px 0;
+}
+
+.titles li a {
+  text-decoration: none;
+  color: #0c2461;
+  font-family: "Poppins", sans-serif;
+}
+
+.titles li a:hover {
+  color: #ff3838;
+  font-weight: 700;
+}
+
+/*Article*/
+.post .post-title {
+  font-family: "Poppins", sans-serif;
+  color: #ff3838;
+  text-transform: uppercase;
+  font-size: 24px;
 }
 
 /* Layout */
