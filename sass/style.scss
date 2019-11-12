@@ -89,12 +89,16 @@ body {
   flex: 2 0 0;
 }
 
-.sidebar, .posts {
+.posts {
   background: $color-light;
   margin-right: 10px;
   padding: 40px;
   border: 1px solid $color-dark;
   border-radius: 5px;
+}
+.sidebar {
+  margin-right: 10px;
+  padding: 40px;
 }
 
 /* Logo */

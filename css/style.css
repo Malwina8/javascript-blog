@@ -75,12 +75,17 @@ body {
       flex: 2 0 0;
 }
 
-.sidebar, .posts {
+.posts {
   background: #fff;
   margin-right: 10px;
   padding: 40px;
   border: 1px solid #444;
   border-radius: 5px;
+}
+
+.sidebar {
+  margin-right: 10px;
+  padding: 40px;
 }
 
 /* Logo */
