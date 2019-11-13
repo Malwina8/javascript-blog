@@ -7,7 +7,7 @@
 }
 
 body {
-  background: #ffcccc;
+  background: #d0e9e5;
   font-family: "Source Sans Pro", sans-serif;
   color: #444;
   font-weight: 300;
@@ -46,14 +46,14 @@ body {
 }
 
 .titles li a:hover {
-  color: #ff3838;
+  color: #273f4f;
   font-weight: 700;
 }
 
 /*Article*/
 .post .post-title {
   font-family: "Poppins", sans-serif;
-  color: #ff3838;
+  color: #273f4f;
   text-transform: uppercase;
   font-size: 24px;
 }

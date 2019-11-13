@@ -4,8 +4,8 @@
 
 $color-light: #fff;
 $color-dark: #444;
-$color-l-pink: #ffcccc;
-$color-article: #ff3838;
+$color-background: #d0e9e5;
+$color-article: #273f4f;
 
 $font-links: 'Merriweather', serif;
 $font-logo: 'Sacramento', cursive;
@@ -20,7 +20,7 @@ $font-article: 'Poppins', sans-serif;
 }
 
 body {
-  background: $color-l-pink;
+  background: $color-background;
   font-family: $font-text;
   color: $color-dark;
   font-weight: 300;
