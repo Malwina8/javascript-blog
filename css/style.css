@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald:400,600|Sacramento|Source+Sans+Pro:300&subset=latin-ext");
 @import url("https://fonts.googleapis.com/css?family=Merriweather:400,700|Poppins:400,700&display=swap&subset=latin-ext");
 /* Variables */
-/* #6D214F #3742fa #d0e9e5;*/
 /* Global */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -79,7 +78,7 @@ article {
   text-transform: uppercase;
   font-size: 24px;
   text-align: center;
-  background-color: #f9f9f9;
+  background-color: #f1e3f6;
   background-size: cover;
   padding: 10px;
   margin-top: 0;
@@ -119,7 +118,7 @@ article {
   margin-right: 10px;
   padding: 40px 60px 30px 60px;
   border-radius: 5px;
-  background-color: #f1e9f6;
+  background-color: #f3f7ed;
   box-shadow: 2px 2px 20px #999;
 }
 

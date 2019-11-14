@@ -2,13 +2,12 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather:400,700|Poppins:400,700&display=swap&subset=latin-ext');
 /* Variables */
 
-$color-light: #f9f9f9;
+$color-light: #f3f7ed;
 $color-dark: #222;
 $color-background: #d9f9f9;
 $color-article: #273f4f;
 $color-links: #192a56;
 $color-hover: #6F1E51;
-/* #6D214F #3742fa #d0e9e5;*/
 
 $font-links: 'Merriweather', serif;
 $font-logo: 'Sacramento', cursive;
@@ -98,7 +97,7 @@ article {
     text-transform: uppercase;
     font-size: 24px;
     text-align: center;
-    background-color: $color-light;
+    background-color: #f1e3f6;
     background-size: cover;
     padding: 10px;
     margin-top: 0;
@@ -142,7 +141,7 @@ article {
   margin-right: 10px;
   padding: 40px 60px 30px 60px;
   border-radius: 5px;
-  background-color: #f1e9f6;
+  background-color: $color-light;
   box-shadow: 2px 2px 20px #999;
 }
 
