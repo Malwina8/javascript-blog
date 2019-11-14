@@ -2,10 +2,13 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather:400,700|Poppins:400,700&display=swap&subset=latin-ext');
 /* Variables */
 
-$color-light: #fff;
-$color-dark: #444;
-$color-background: #d0e9e5;
+$color-light: #f9f9f9;
+$color-dark: #222;
+$color-background: #d9f9f9;
 $color-article: #273f4f;
+$color-links: #192a56;
+$color-hover: #6F1E51;
+/* #6D214F #3742fa #d0e9e5;*/
 
 $font-links: 'Merriweather', serif;
 $font-logo: 'Sacramento', cursive;
@@ -23,8 +26,8 @@ body {
   background: $color-background;
   font-family: $font-text;
   color: $color-dark;
-  font-weight: 300;
-  font-size: 16px;
+  font-weight: 500;
+  font-size: 18px;
   line-height: 1.7;
 }
 
@@ -45,6 +48,31 @@ body {
   }
 }
 
+/*header*/
+
+.logo {
+  font-family: $font-logo;
+  font-weight: 550;
+  line-height: 1;
+  text-align: center;
+  background-image: url("https://images.unsplash.com/photo-1422205512921-12dac7b3b603?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80");
+  background-size: cover;
+  background-position: center;
+  color: #222;
+  font-size: 120px;
+}
+
+/*links*/
+
+a {
+  text-decoration: none;
+  color: $color-links;
+  &:hover {
+    font-weight: bold;
+    color: $color-hover;
+  }
+}
+
 /* Article links*/
 
 .titles {
@@ -52,18 +80,16 @@ body {
     font-size: 20px;
     padding: 2px 0;
     a {
-      text-decoration: none;
-      color: #0c2461;
       font-family: $font-article;
-      &:hover {
-        color: $color-article;
-        font-weight: 700;
-      }
     }
   }
 }
 
 /*Article*/
+
+article {
+  padding-bottom: 20px;
+}
 
 .post {
   .post-title {
@@ -71,18 +97,31 @@ body {
     color: $color-article;
     text-transform: uppercase;
     font-size: 24px;
+    text-align: center;
+    background-color: $color-light;
+    background-size: cover;
+    padding: 10px;
+    margin-top: 0;
+    border-radius: 6px;
+    box-shadow: 1px 1px 10px #bbb;
+  }
+}
+
+/*sidebar*/
+
+.tags,
+.authors {
+  a {
+    color: $color-dark;
   }
 }
 
 /*post-tags*/
 
-  .post li {
+.post li {
     padding-right: 6px;
-    a {
-      text-decoration: none;
-      color: $color-dark;
-    }
-  }
+
+}
 
 /* Layout */
 
@@ -100,25 +139,16 @@ body {
 }
 
 .posts {
-  background: $color-light;
   margin-right: 10px;
-  padding: 40px;
-  border: 1px solid $color-dark;
+  padding: 40px 60px 30px 60px;
   border-radius: 5px;
+  background-color: #f1e9f6;
+  box-shadow: 2px 2px 20px #999;
 }
+
 .sidebar {
   margin-right: 10px;
   padding: 40px;
-}
-
-/* Logo */
-
-.logo {
-  font-family: $font-logo;
-  font-weight: 400;
-  font-size: 104px;
-  line-height: 1;
-  text-align: center;
 }
 
 /* Lists */
