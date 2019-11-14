@@ -58,6 +58,16 @@ body {
   font-size: 24px;
 }
 
+/*post-tags*/
+.post li {
+  padding-right: 6px;
+}
+
+.post li a {
+  text-decoration: none;
+  color: #444;
+}
+
 /* Layout */
 .wrapper {
   display: -ms-flexbox;

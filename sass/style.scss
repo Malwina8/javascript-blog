@@ -74,6 +74,16 @@ body {
   }
 }
 
+/*post-tags*/
+
+  .post li {
+    padding-right: 6px;
+    a {
+      text-decoration: none;
+      color: $color-dark;
+    }
+  }
+
 /* Layout */
 
 .wrapper {
