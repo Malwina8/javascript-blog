@@ -98,7 +98,7 @@ function generateTags() {
 
 generateTags();
 
- function tagClickHandler(event){
+function tagClickHandler(event) {
   /* prevent default action for this event */
   event.preventDefault();
   /* make new constant named "clickedElement" and give it the value of "this" */
@@ -112,7 +112,7 @@ generateTags();
   /* START LOOP: for each active tag link */
   for (let activeTagLink of activeTagLinks) {
     /* remove class active */
-    activeTagLink.classList.remove('active');
+    clickedElement.classList.remove('active');
   /* END LOOP: for each active tag link */
   }
   /* find all tag links with "href" attribute equal to the "href" constant */
@@ -120,7 +120,7 @@ generateTags();
   /* START LOOP: for each found tag link */
   for (let activeTagLink of activeTagLinks) {
   /* add class active */
-    activeTagLink.classList.add('active');
+    clickedElement.classList.add('active');
   /* END LOOP: for each found tag link */
   }
   /* execute function "generateTitleLinks" with article selector as argument */
@@ -128,12 +128,13 @@ generateTags();
 }
 function addClickListenersToTags(){
   /* find all links to tags */
-
+  const links = document.querySelectorAll('.post .list');
   /* START LOOP: for each link */
-
+  for (let link of links) {
   /* add tagClickHandler as event listener for that link */
-
+    link.addEventListener('click', tagClickHandler);
   /* END LOOP: for each link */
+  }
 }
 
 addClickListenersToTags();
