@@ -92,34 +92,35 @@ article {
 }
 
 .right {
-    width: 250px;
+  width: 250px;
 }
 
 .tags ul {
   max-width: 100%;
   overflow-wrap: break-word;
 }
+
 .tags li {
-    display: inline;
-    padding: 3px;
-     overflow-wrap: break-word;
+  display: inline;
+  padding: 3px;
+  overflow-wrap: break-word;
+  font-weight: 600;
 }
 
 .tag-size-1 {
   font-size: 15px;
-  color: #27ae60;
+  color: #0652DD;
 }
 
 .tag-size-2 {
   font-size: 18px;
-  color: #c0392b;
+  color: #ED4C67;
 }
 
 .tag-size-3 {
   font-size: 24px;
   color: #8e44ad;
 }
-
 
 .tag-size-4 {
   font-size: 26px;
@@ -128,7 +129,7 @@ article {
 
 .tag-size-5 {
   font-size: 32px;
-  color: #e67e22;
+  color: #EA2027;
 }
 
 /*post-tags*/
