@@ -87,10 +87,12 @@ article {
 }
 
 /*sidebar*/
-.tags a,
 .authors a {
   color: #222;
 }
+
+
+
 
 /*post-tags*/
 .post li {

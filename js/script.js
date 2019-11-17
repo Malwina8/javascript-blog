@@ -30,7 +30,17 @@ const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles',
   optArticleTagsSelector = '.post-tags .list',
-  optArticleAuthorSelector = '.post-author';
+  optArticleAuthorSelector = '.post-author',
+  optCloudClassCount = 5,
+  optCloudClassPrefix = 'tag-size-';
+
+function calculateTagsClass(count, params) {
+  const normalizedCount = count - params.min;
+  const normalizedMax = params.max - params.min;
+  const percentage = normalizedCount / normalizedMax;
+  const classNumber = Math.floor( percentage * (optCloudClassCount - 1) + 1);
+  return optCloudClassPrefix + classNumber;
+}
 
 function generateTitleLinks(customSelector = '') {
   /* remove contents of titleList */
@@ -69,14 +79,14 @@ function calculateTagsParams(tags) {
   const params = {
     max: 0,
     min: 999999
-  }
+  };
   for (let tag in tags) {
     console.log('tag and tags: ' + tag + ' is used ' + tags[tag] + ' times');
     if(tags[tag] > params.max) {
       params.max = tags[tag];
     }
     if(tags[tag] < params.min) {
-      params.min = tags[tag]
+      params.min = tags[tag];
     }
   }
   return params;
@@ -108,11 +118,11 @@ function generateTags() {
       /* add generated code to html variable */
       html = html + tagHtml;
       /* [NEW] check if this link is NOT already in allTags */
-      if(!allTags[tagHtml]) {
+      if(!allTags[tag]) {
         /* [NEW] add generated code to allTags array */
-        allTags[tagHtml] = 1;
+        allTags[tag] = 1;
       } else {
-        allTags[tagHtml]++;
+        allTags[tag]++;
       }
     /* END LOOP: for each tag */
     }
@@ -129,7 +139,8 @@ function generateTags() {
   /* [NEW] START LOOP: for each tag in allTags */
   for(let tag in allTags) {
   /* [NEW] generate code of a link and add it to allTagsHTML */
-    allTagsHTML += tag + ' (' + allTags[tag] + ') ';
+    const tagLinkHTML = '<li><a href="#tag-' + tag + '"class="' + calculateTagsClass(allTags[tag], tagsParams) + '">' + tag + '</a></li>';
+    allTagsHTML += tagLinkHTML;
   }
   tagList.innerHTML = allTagsHTML;
   addClickListenersToTags();
