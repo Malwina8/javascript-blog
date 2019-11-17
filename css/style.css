@@ -91,7 +91,19 @@ article {
   color: #222;
 }
 
+.right {
+    width: 250px;
+}
 
+.tags ul {
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+.tags li {
+    display: inline;
+    padding: 3px;
+     overflow-wrap: break-word;
+}
 
 .tag-size-1 {
   font-size: 15px;
