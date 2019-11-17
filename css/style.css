@@ -91,30 +91,27 @@ article {
   color: #222;
 }
 
-.right {
-  width: 250px;
-}
-
-.tags ul {
-  max-width: 100%;
-  overflow-wrap: break-word;
+.tags-width {
+  width: 170px;
 }
 
 .tags li {
-  display: inline;
-  padding: 3px;
+  display: inline-block;
+  padding: 0 3px;
   overflow-wrap: break-word;
+  white-space: pre-wrap;
   font-weight: 600;
+  line-height: 1;
 }
 
 .tag-size-1 {
-  font-size: 15px;
+  font-size: 16px;
   color: #0652DD;
 }
 
 .tag-size-2 {
   font-size: 18px;
-  color: #ED4C67;
+  color: #009432;
 }
 
 .tag-size-3 {
