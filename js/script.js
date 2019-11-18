@@ -93,52 +93,28 @@ function calculateTagsParams(tags) {
 }
 
 function generateTags() {
-  /* [NEW] create a new variable allTags with an empty object */
   let allTags = {};
-  console.log('allTags: ' , allTags);
-  /* find all articles */
   const articles = document.querySelectorAll(optArticleSelector);
-  /* START LOOP: for every article: */
   for (let article of articles) {
-    /* find tags wrapper */
     const tagWrapper = article.querySelector(optArticleTagsSelector);
-    console.log('tag wrapper: ' , tagWrapper);
-    /* make html variable with empty string */
     let html = '';
-    /* get tags from data-tags attribute */
     const articleTags = article.getAttribute('data-tags');
-    console.log('data-tags value: ' + articleTags);
-    /* split tags into array */
     const articleTagsArray = articleTags.split(' ');
-    console.log('split: ', articleTagsArray);
-    /* START LOOP: for each tag */
     for (let tag of articleTagsArray) {
-      /* generate HTML of the link */
       const tagHtml = '<li><a href="#tag-' + tag + '">' + tag + ' </a></li>';
-      /* add generated code to html variable */
       html = html + tagHtml;
-      /* [NEW] check if this link is NOT already in allTags */
       if(!allTags[tag]) {
-        /* [NEW] add generated code to allTags array */
         allTags[tag] = 1;
       } else {
         allTags[tag]++;
       }
-    /* END LOOP: for each tag */
     }
-    /* insert HTML of all the links into the tags wrapper */
     tagWrapper.innerHTML = html;
-  /* END LOOP: for every article: */
   }
-  /* [NEW] find list of tags in right column */
   const tagList = document.querySelector('.tags');
-  /* [NEW] create variable for all links HTML code */
   const tagsParams = calculateTagsParams(allTags);
-  console.log('tagsParams: ', tagsParams);
   let allTagsHTML = '';
-  /* [NEW] START LOOP: for each tag in allTags */
   for(let tag in allTags) {
-  /* [NEW] generate code of a link and add it to allTagsHTML */
     const tagLinkHTML = '<li><a href="#tag-' + tag + '"class="' + calculateTagsClass(allTags[tag], tagsParams) + '">' + tag + '</a></li>';
     allTagsHTML += tagLinkHTML;
   }
@@ -195,28 +171,30 @@ addClickListenersToTags();
 // Generate autors
 
 function generateAuthors() {
-  /* find all articles */
+  let allAuthors = {};
   const articles = document.querySelectorAll(optArticleSelector);
-  /* START LOOP: for every article: */
   for (let article of articles) {
-    /* find tags wrapper */
     const authorWrapper = article.querySelector(optArticleAuthorSelector);
-    console.log('author wrapper: ' + authorWrapper);
-    /* make html variable with empty string */
-    let html = '';
-    /* get tags from data-tags attribute */
+     let html = '';
     const articleAuthors = article.getAttribute('data-author');
-    console.log('data-author value: ' + articleAuthors);
-    /* START LOOP: for each tag */
-    /* generate HTML of the link */
-    let authorHtml = '<a href="#author-' + articleAuthors + '">by ' + articleAuthors + ' </a>';
-    console.log('author html: ' + authorHtml);
-    /* add generated code to html variable */
-    html = html + authorHtml;
-    /* insert HTML of all the links into the tags wrapper */
+      let authorLink = '<a href="#author-' + articleAuthors + '">' + articleAuthors +'</a>';
+      html = html + authorLink;
+    if(allAuthors.hasOwnProperty(articleAuthors)) {
+        allAuthors[articleAuthors]++;
+    } else {
+      allAuthors[articleAuthors] = 1;
+    }
     authorWrapper.innerHTML = html;
-  /* END LOOP: for every article: */
+}
+  const authorList = document.querySelector('.authors');
+  let allAuthorsHtml = '';
+  for(let link in allAuthors) {
+    const authorLinkHtml = '<li><a href="#author-' + link + '">' + link + '(' + allAuthors[link] +')</a></li>'
+    allAuthorsHtml += authorLinkHtml;
+    console.log('link: ', link);
+    console.log('allAuthors: ', allAuthors);
   }
+    authorList.innerHTML = allAuthorsHtml;
 }
 
 generateAuthors();
