@@ -3,7 +3,8 @@
 /*eslint-disable */
 const templates = {
   articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML),
-  tagLink: Handlebars.compile(document.querySelector('#template-tag').innerHTML)
+  tagLink: Handlebars.compile(document.querySelector('#template-tag').innerHTML),
+  authorLink: Handlebars.compile(document.querySelector('#template-author').innerHTML)
 
 };
 /*eslint-enable */
@@ -94,7 +95,7 @@ function generateTags() {
     const articleTags = article.getAttribute('data-tags');
     const articleTagsArray = articleTags.split(' ');
     for (let tag of articleTagsArray) {
-      const tagHTMLData = {id: `tag-${tag}`, title: tag};   
+      const tagHTMLData = {id: `tag-${tag}`, title: tag};
       const tagHtml = templates.tagLink(tagHTMLData);
       html = html + tagHtml;
       if(!allTags[tag]) {
@@ -154,7 +155,9 @@ function generateAuthors() {
     const authorWrapper = article.querySelector(opt.articleAuthorSelector);
     let html = '';
     const articleAuthors = article.getAttribute('data-author');
-    let authorLink = '<a href="#author-' + articleAuthors + '">' + articleAuthors +'</a>';
+    const authorHTMLData = {id: `author-${articleAuthors}`, title: articleAuthors};
+    const authorLink = templates.authorLink(authorHTMLData);
+
     html = html + authorLink;
     if(allAuthors[articleAuthors]) {
       allAuthors[articleAuthors]++;
