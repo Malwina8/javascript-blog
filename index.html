@@ -49,7 +49,7 @@
             </ul>
           </div>
         </article>
-        <article class="post active" id="article-3" data-tags="news study reviews design" data-author="George Tuxedo">
+        <article class="post" id="article-3" data-tags="news study reviews design" data-author="George Tuxedo">
           <h3 class="post-title">Article 3</h3>
           <p class="post-author"></p>
           <div class="post-content">
@@ -202,6 +202,12 @@
 
 	<script id="template-author" type="text/x-handlebars-template">
 		<a href="#{{ id }}"><span>{{ title }}</span></a>
+	</script>
+
+	<script id="template-tag-cloud-link" type="text/x-handlebars-template">
+  {{#each tags}}
+  <li><a href="#tag-{{ tag }}" class="{{className}}">{{tag}}</a></li>
+  {{/each}}
 	</script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
