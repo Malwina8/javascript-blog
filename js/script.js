@@ -1,5 +1,11 @@
 'use strict';
 
+/*eslint-disable */
+const templates = {
+  articleLink: Handlebars
+    .compile(document.querySelector('#template-article-link').innerHTML)
+};
+/*eslint-enable */
 const opt = {
   aticleSelector: '.post',
   titleSelector: '.post-title',
@@ -44,7 +50,8 @@ function generateTitleLinks(customSelector = '') {
   for (let article of articles) {
     const articleId = article.getAttribute('id');
     const articleTitle = article.querySelector(opt.titleSelector).innerHTML;
-    const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a<></li>';
+    const linkHTMLData = {id: articleId, title: articleTitle};
+    const linkHTML = templates.articleLink(linkHTMLData);
     console.log(linkHTML);
     html = html + linkHTML;
   }
