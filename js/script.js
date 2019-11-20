@@ -2,8 +2,9 @@
 
 /*eslint-disable */
 const templates = {
-  articleLink: Handlebars
-    .compile(document.querySelector('#template-article-link').innerHTML)
+  articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML),
+  tagLink: Handlebars.compile(document.querySelector('#template-tag').innerHTML)
+
 };
 /*eslint-enable */
 const opt = {
@@ -93,7 +94,8 @@ function generateTags() {
     const articleTags = article.getAttribute('data-tags');
     const articleTagsArray = articleTags.split(' ');
     for (let tag of articleTagsArray) {
-      const tagHtml = '<li><a href="#tag-' + tag + '">' + tag + ' </a></li>';
+      const tagHTMLData = {id: `tag-${tag}`, title: tag};   
+      const tagHtml = templates.tagLink(tagHTMLData);
       html = html + tagHtml;
       if(!allTags[tag]) {
         allTags[tag] = 1;
